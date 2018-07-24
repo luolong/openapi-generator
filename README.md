@@ -133,12 +133,18 @@ See the different versions of the [openapi-generator-cli](https://mvnrepository.
 * [Readme](https://github.com/OpenAPITools/openapi-generator/blob/master/modules/openapi-generator-maven-plugin/README.md)
 
 **Gradle plugin:**
-```xml
-<dependency>
-    <groupId>org.openapitools</groupId>
-    <artifactId>openapi-generator-gradle-plugin</artifactId>
-    <version>${openapi-generator-version}</version>
-</dependency>
+```gradle
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+  dependencies {
+    classpath "org.openapitools:openapi-generator-gradle-plugin:${openapi-generator-version}"
+  }
+}
+
+apply plugin: 'org.openapi.generator'
 ```
 * See the different versions of the [openapi-generator-gradle-plugin](https://mvnrepository.com/artifact/org.openapitools/openapi-generator-gradle-plugin) artifact available on maven central.
 * [Readme](https://github.com/OpenAPITools/openapi-generator/blob/master/modules/openapi-generator-gradle-plugin/README.adoc)
